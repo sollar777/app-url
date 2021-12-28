@@ -10,8 +10,12 @@ class Url extends Model
     use HasFactory;
 
 
+    protected $table = "urls";
+
     protected $fillable = [
         "url_full",
-        "url_cut"
+        "url_cut",
+        "cod_url",
+        "view"
     ];
 }
