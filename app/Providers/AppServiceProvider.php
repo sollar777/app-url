@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Contracts\Url\UrlConsumer;
+use App\Contracts\Url\UrlInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            UrlInterface::class,
+            UrlConsumer::class     
+        );
     }
 
     /**
